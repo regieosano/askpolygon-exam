@@ -18,6 +18,17 @@ function Main() {
 			 
 			}).then((data) => {
 				setDataHistory(data.data.result);
+				try {
+					Axios.request({
+						method: 'GET',
+						baseURL: `${env.API_URL}?module=account&action=balance&address=${env.ADDRESS}&apikey=${env.API_KEY}`,
+					 
+					}).then((data) => {
+            console.log(data);
+					})
+				} catch (error) {
+					console.error(error)
+				}
 			 })
 		} catch (error) {
 			  console.log(error);

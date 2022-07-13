@@ -3,7 +3,6 @@ import './History.css';
 import Table from 'react-bootstrap/Table';
 
 function History({dataHistory}) {
-
  
 	return (
 		<>
@@ -21,19 +20,21 @@ function History({dataHistory}) {
             </tr>
           </thead>
          <tbody>
-           <tr>
-             <td>Mark</td>
-             <td>Otto</td>
-             <td>@mdo</td>
-           </tr>
-           <tr>
-             <td>Jacob</td>
-             <td>Thornton</td>
-             <td>@fat</td>
-           </tr>
-           <tr>
-             <td>@twitter</td>
-           </tr>
+					{
+						dataHistory.map((data, index) => {
+							return (
+								<tr key={index}>
+								  <td>None</td>
+							  	<td>{data.value}</td>
+							  	<td>{data.timeStamp}</td>
+									<td>{data.from}</td>
+									<td>{data.to}</td>
+									<td>{data.transactionIndex}</td>
+							  </tr>
+							)
+						})
+					}
+               
          </tbody>
         </Table> 	
 			</div>

@@ -1,7 +1,9 @@
 .history {
+	margin-top: 10px;
 	margin-left: 20px;
 	margin-right: 20px;
 	padding: 15px;
+	background-color: #e5f2ff;
 }
 
 .history-header {
