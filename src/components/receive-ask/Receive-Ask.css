@@ -1,0 +1,14 @@
+.receive-ask {
+	margin-left: 20px;
+	margin-right: 20px;
+	padding: 15px;
+	height: 150px;
+}
+
+.receive-ask-title {
+	font-weight: bold;
+}
+
+.receive-background-color {
+	background-color: #e5f2ff;
+}

@@ -1,0 +1,49 @@
+.ask {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	padding: 15px;
+	height: 300px;
+}
+
+.ask-title {
+	font-weight: bold;
+}
+
+.total-balance {
+	font-size: 12px;
+}
+
+.total-balance-value {
+	font-weight: bold;
+}
+
+.welcome-title {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.wallet-address {
+	margin-left: 10px;
+	margin-top: 24px;
+}
+
+.input-wallet-address {
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+.background-color1 {
+	background-color: #e5ecff;
+}
+
+.background-color2 {
+	background-color: #e5f2ff;
+}
+
+.no-gutter  {
+	column-gap: .5em;
+	
+}
+
+
