@@ -1,6 +1,7 @@
 import NavBar from '../components/navbar/NavBar';
 import Ask from '../components/ask/Ask';
 import ReceiveAsk from '../components/receive-ask/Receive-Ask';
+import History from '../components/history/History';
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import env from "react-dotenv";
@@ -11,14 +12,13 @@ function Main() {
 		try {
 			Axios.request({
 				method: 'GET',
-				baseURL: `${env.API_URL}?module=account&action=txlist&address=0xaA3717090CDDc9B227e49d0D84A28aC0a996e6Ff&startblock=0&endblock=99999999&page=1&offset=10&sort=asc&apikey=E2R8FK55WG87J5PIFM7KS6FJK812IH1SQY`,
-			
-		 
+				baseURL: `${env.API_URL}?module=account&action=txlist&address=${env.ADDRESS}&startblock=0&endblock=99999999&page=1&offset=10&sort=asc&apikey=${env.API_KEY}`,
+			 
 			}).then((data) => {
-				console.log(data);
+				console.log(data.data.result);
 			 })
 		} catch (error) {
-			
+			  console.log(error);
 		}
 	})
 
@@ -28,6 +28,7 @@ function Main() {
 			<NavBar />
 			<Ask />
 			<ReceiveAsk />
+			<History />
 		</>
 	)
 }
