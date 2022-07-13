@@ -3,7 +3,7 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import './Ask.css';
 
-function Ask() {
+function Ask({totalBalance}) {
   return (
 		<>
 		  <Row>
@@ -11,7 +11,7 @@ function Ask() {
 			    <div className="ask background-color1">
 		         <div className="ask-title">ASK</div>
              <div className="total-balance">Total Balance ?</div>
-			      <div className="total-balance-value">4533422</div>
+			      <div className="total-balance-value">{totalBalance}</div>
 			    </div>
 	    	</Col>
         <Col sm={8}>

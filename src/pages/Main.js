@@ -9,6 +9,7 @@ import env from "react-dotenv";
 function Main() {
 
 	const [dataHistory, setDataHistory] = useState([]);
+	const [totalBalance, setTotalBalance] = useState("");
 
   useEffect(() => {
 		try {
@@ -24,7 +25,7 @@ function Main() {
 						baseURL: `${env.API_URL}?module=account&action=balance&address=${env.ADDRESS}&apikey=${env.API_KEY}`,
 					 
 					}).then((data) => {
-            console.log(data);
+            setTotalBalance(data.data.result);
 					})
 				} catch (error) {
 					console.error(error)
@@ -39,7 +40,7 @@ function Main() {
 	return (
 		<>
 			<NavBar />
-			<Ask />
+			<Ask totalBalance={totalBalance}/>
 			<ReceiveAsk />
 			<History dataHistory={dataHistory} />
 		</>
