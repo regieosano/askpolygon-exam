@@ -26,10 +26,10 @@ function History({dataHistory}) {
 								<tr key={index}>
 								  <td>None</td>
 							  	<td>{data.value}</td>
-							  	<td>{data.timeStamp}</td>
-									<td>{data.from}</td>
-									<td>{data.to}</td>
-									<td>{data.transactionIndex}</td>
+							  	<td>{new Date(Number(data.timeStamp)).toDateString()}</td>
+									<td>{data.from.substring(0,5) + "..." + data.from.slice(-5)}</td>
+									<td>{data.to.substring(0,5) + "..." + data.to.slice(-5)}</td>
+									<td>{data.hash.substring(0,5) + "..." + data.hash.slice(-5)}</td>
 							  </tr>
 							)
 						})
