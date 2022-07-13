@@ -8,6 +8,8 @@ import env from "react-dotenv";
 
 function Main() {
 
+	const [dataHistory, setDataHistory] = useState([]);
+
   useEffect(() => {
 		try {
 			Axios.request({
@@ -15,12 +17,12 @@ function Main() {
 				baseURL: `${env.API_URL}?module=account&action=txlist&address=${env.ADDRESS}&startblock=0&endblock=99999999&page=1&offset=10&sort=asc&apikey=${env.API_KEY}`,
 			 
 			}).then((data) => {
-				console.log(data.data.result);
+				setDataHistory(data.data.result);
 			 })
 		} catch (error) {
 			  console.log(error);
 		}
-	})
+	}, [])
 
 
 	return (
@@ -28,7 +30,7 @@ function Main() {
 			<NavBar />
 			<Ask />
 			<ReceiveAsk />
-			<History />
+			<History dataHistory={dataHistory} />
 		</>
 	)
 }

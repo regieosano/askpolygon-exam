@@ -1,6 +1,10 @@
 .history {
 	margin-left: 20px;
 	margin-right: 20px;
-	font-weight: bold;
 	padding: 15px;
+}
+
+.history-header {
+	font-weight: bold;
+	font-size: 20px;
 }
